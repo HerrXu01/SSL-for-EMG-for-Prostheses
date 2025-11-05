@@ -1,0 +1,10 @@
+python -u main.py extract \
+  --config configs/phase_0_configs/phase_0_extract.yaml \
+  --gpu 0 \
+  --seed 2025 \
+  --seq_len 160 \
+  --token_len 8 \
+  --mix_embeds \
+  --setting Phase_0_exp_a_no_bp_filter_no_rectify_AutoTimesLlama_Ninapro_DB5_epochs20_sl160_ll152_tl8_lr0.0005_bs64_hd512_hl2_mixTrue \
+  --split_config_filename phase_0_exp_a_no_bp_filter_no_rectify_splits.json \
+  --classifier_data_dir /mnt/scratchpad/xzt_ma/phase_0_exp_a/

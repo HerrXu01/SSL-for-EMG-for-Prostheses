@@ -1,0 +1,17 @@
+python -u main.py classifier \
+  --config configs/phase_1_configs/phase_1_ssl_classifier.yaml \
+  --gpu 1 \
+  --seed 2026 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_1_exp_6_sl80_tl16_mixFalse/ssl_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_1_exp_6_sl80_tl16_mixFalse/ssl_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_1_exp_6_sl80_tl16_mixFalse/ssl_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename phase_1_exp_6_ssl_cnn.pt \
+  --num_classes 7 \
+  --classifier EMGFeatureCNN \
+  --trainer CNN4EMGTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name Phase_1_exp_6_sl80_tl16_mixFalse_ssl_cnn \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0

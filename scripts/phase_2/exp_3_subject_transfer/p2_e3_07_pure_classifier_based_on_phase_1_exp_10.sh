@@ -1,0 +1,17 @@
+python -u main.py classifier \
+  --config configs/phase_2_configs/phase_2_pure_classifier.yaml \
+  --gpu 0 \
+  --seed 2026 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_3_extracted_features_use_phase_1_exp_10/supervised_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_3_extracted_features_use_phase_1_exp_10/supervised_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_3_extracted_features_use_phase_1_exp_10/supervised_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename phase_2_exp_3_subject_transfer_p1e10_seq_len_160_pure_cnn.pt \
+  --num_classes 7 \
+  --classifier EMGPureCNN \
+  --trainer CNN4EMGTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name Phase_2_exp_3_subject_transfer_p1e10_seq_len_160_pure_cnn \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0

@@ -1,0 +1,18 @@
+gpu: 0
+seed: 2025
+train_h5_path: h5_dir/supervised_train.h5
+val_h5_path: h5_dir/supervised_val.h5
+test_h5_path: h5_dir/supervised_test.h5
+batch_size: 64
+ckpt_save_dir: ./checkpoints                                                       # The save directory for the classifier
+ckpt_filename: cnn.pt
+conv1_channels: 32
+conv2_channels: 64
+num_classes: 4
+classifier: EMGPureCNN
+lr: 0.0001
+patience: 5
+wandb_project: Llama4EMG_Ninapro_DB5
+exp_name: pure_classifier
+epochs: 100
+trainer: CNN4EMGTrainer

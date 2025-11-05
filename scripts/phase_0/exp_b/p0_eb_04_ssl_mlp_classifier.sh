@@ -1,0 +1,20 @@
+python -u main.py classifier \
+  --config configs/all_phase_mlp_classifier.yaml \
+  --gpu 0 \
+  --seed 2025 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_b/ssl_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_b/ssl_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_b/ssl_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename phase_0_exp_b_ssl_mlp_classifier.pt \
+  --num_classes 4 \
+  --classifier MLPBottleneckClassifier \
+  --trainer DownstreamClassifierTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name Phase_0_exp_b_no_bp_filter_with_rectify_ssl_mlp_classifier \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0 \
+  --feature_dim 4096 \
+  --bottleneck_dim 32 \
+  --hidden_dim 128

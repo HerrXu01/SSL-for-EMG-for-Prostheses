@@ -1,0 +1,6 @@
+gpu: 0
+llm_ckp_dir: ./llama
+timestamp_embedding_path: dataset/timestamp_embeddings                                    # The folder for timestamp embeddings
+seq_len: 80
+token_len: 16
+sampling_rate: 200

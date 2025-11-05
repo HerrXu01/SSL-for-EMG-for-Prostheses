@@ -1,0 +1,17 @@
+python -u main.py classifier \
+  --config configs/phase_1_configs/phase_1_ssl_classifier.yaml \
+  --gpu 0 \
+  --seed 2026 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_2_extracted_features_use_phase_1_exp_4/ssl_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_2_extracted_features_use_phase_1_exp_4/ssl_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_2_extracted_features_use_phase_1_exp_4/ssl_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename phase_2_exp_2_with_phase_1_exp_4_ssl_cnn.pt \
+  --num_classes 7 \
+  --classifier EMGFeatureCNN \
+  --trainer CNN4EMGTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name Phase_2_exp_2_same_subjects_diff_6gestures_with_phase_1_exp_4_ssl_cnn \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0

@@ -1,0 +1,20 @@
+python -u main.py classifier \
+  --config configs/all_phase_mlp_classifier.yaml \
+  --gpu 0 \
+  --seed 2026 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_4_extracted_features_use_p1e16/ssl_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_4_extracted_features_use_p1e16/ssl_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_2_exp_4_extracted_features_use_p1e16/ssl_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename phase_2_exp_4_joint_transfer_diff_subjects_diff_6gestures_based_on_p1e16_ssl_mlp_classifier.pt \
+  --num_classes 7 \
+  --classifier MLPBottleneckClassifier \
+  --trainer DownstreamClassifierTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name Phase_2_exp_4_joint_transfer_diff_subjects_diff_6gestures_based_on_p1e16_ssl_mlp_classifier \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0 \
+  --feature_dim 4096 \
+  --bottleneck_dim 32 \
+  --hidden_dim 128

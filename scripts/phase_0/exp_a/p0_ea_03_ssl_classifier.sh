@@ -1,0 +1,17 @@
+python -u main.py classifier \
+  --config configs/phase_0_configs/phase_0_ssl_classifier.yaml \
+  --gpu 0 \
+  --seed 2025 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_a/ssl_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_a/ssl_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_a/ssl_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename phase_0_exp_a_ssl_cnn.pt \
+  --num_classes 4 \
+  --classifier EMGFeatureCNN \
+  --trainer CNN4EMGTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name Phase_0_exp_a_no_bp_filter_no_rectify_ssl_cnn \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0

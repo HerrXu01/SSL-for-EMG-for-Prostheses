@@ -1,0 +1,13 @@
+python -u main.py extract \
+  --config configs/phase_0_configs/phase_0_extract.yaml \
+  --gpu 1 \
+  --seed 2025 \
+  --seq_len 160 \
+  --token_len 8 \
+  --mix_embeds \
+  --setting Phase_0_exp_g_with_bp_filter_no_rectify_lp_90Hz_AutoTimesLlama_Ninapro_DB5_epochs20_sl160_ll152_tl8_lr0.0005_bs64_hd512_hl2_mixTrue \
+  --split_config_filename phase_0_exp_g_with_bp_filter_no_rectify_lp_90Hz_splits.json \
+  --enable_bp_filter \
+  --enable_lp_filter \
+  --cutoff_f 90 \
+  --classifier_data_dir /mnt/scratchpad/xzt_ma/phase_0_exp_g/

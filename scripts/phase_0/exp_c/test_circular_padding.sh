@@ -1,0 +1,18 @@
+python -u main.py classifier \
+  --config configs/phase_0_configs/phase_0_ssl_classifier.yaml \
+  --gpu 0 \
+  --seed 2025 \
+  --train_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_c/ssl_train.h5 \
+  --val_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_c/ssl_val.h5 \
+  --test_h5_path /mnt/scratchpad/xzt_ma/phase_0_exp_c/ssl_test.h5 \
+  --batch_size 64 \
+  --ckpt_filename test_circular_padding_cnn.pt \
+  --num_classes 4 \
+  --classifier EMGFeatureCNN \
+  --trainer CNN4EMGTrainer \
+  --lr 0.0001 \
+  --epochs 100 \
+  --exp_name test_circular_padding_cnn \
+  --enable_balance_labels \
+  --downsample_target_ratio 1.0 \
+  --enable_channel_circular_padding

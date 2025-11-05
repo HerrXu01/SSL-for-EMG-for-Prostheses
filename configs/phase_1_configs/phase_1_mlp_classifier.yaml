@@ -1,0 +1,22 @@
+gpu: 0
+seed: 2026
+train_h5_path: /mnt/scratchpad/xzt_ma/phase_1_exp_1/ssl_train.h5
+val_h5_path: /mnt/scratchpad/xzt_ma/phase_1_exp_1/ssl_val.h5
+test_h5_path: /mnt/scratchpad/xzt_ma/phase_1_exp_1/ssl_test.h5
+batch_size: 64
+ckpt_save_dir: checkpoints                                                       # The save directory for the classifier
+ckpt_filename: ssl_cnn.pt
+feature_dim: 4096                                         # 4096 for ssl, seq_len for supervised
+bottleneck_dim: 32
+hidden_dim: 128
+enable_channel_circular_padding: False
+num_classes: 7
+classifier: MLPBottleneckClassifier
+lr: 0.0001
+patience: 7
+wandb_project: Llama4EMG_Ninapro_DB5
+exp_name: Phase_2_exp_1_mlp_classifier
+epochs: 100
+trainer: CNN4EMGTrainer
+enable_balance_labels: True
+downsample_target_ratio: 1.0                                   # the target number of samples for the downsample_label is max(other_class_count) * target_ratio

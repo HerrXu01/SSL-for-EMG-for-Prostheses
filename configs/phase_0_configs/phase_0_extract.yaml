@@ -1,0 +1,23 @@
+gpu: 0
+seed: 2025
+token_len: 8                                                                          # Must be the same as the corresponding ssl phase
+seq_len: 160                                                                          # Must be the same as the corresponding ssl phase
+llm_ckp_dir: ./llama
+classifier_data_dir: /mnt/scratchpad/xzt_ma/phase_0_exp_a/                                          # The extracted features with labels could be very large, make sure this directory has enough memory
+use_amp: True
+mix_embeds: True
+mlp_hidden_layers: 2
+mlp_hidden_dim: 512
+mlp_activation: relu
+dropout: 0.1
+checkpoints: checkpoints
+setting: exp_name___change_me                                                                         # Note specify the correct path of the checkpoint
+ckpt_filename: checkpoint.pth
+split_config_dir: split_configs                                                           
+split_config_filename: phase_0_exp_a_no_bp_filter_no_rectify_splits.json                                                # Set this correctly!
+timestamp_embedding_dir: dataset/timestamp_embeddings
+label_threshold: 0.7                                                                      # In the label vector, only when the number of non-zero entries is over this threshold, it'll be considered as non-rest gesture
+enable_bp_filter: False
+enable_rectify: False
+enable_lp_filter: False
+cutoff_f: 30                                                # Cutoff frequency for lowpass or highpass filter

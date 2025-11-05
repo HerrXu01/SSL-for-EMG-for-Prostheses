@@ -1,0 +1,56 @@
+# Basic configs
+gpu: 0                                                      # ------------------> Change for different settings
+exp_name_prefix: Phase_0_                                   # ------------------> Change for different settings
+seed: 2025                                                  # Use different seeds for different phases experiments ------------------>
+checkpoints: checkpoints
+
+# Data configs
+data: Ninapro_DB5
+dataset_root_path: dataset/ninapro_db5_raw
+sampling_rate: 200
+subjects_list:                                              # The list of subjects whose data is to be used, must be a list of strings, from s1, s2, to s10
+  - s1
+  - s2
+# subjects_list: all                                        # Set the subjects_list to the str 'all' if you want to use all subjects' data
+gestures_list:                                              # View https://ninapro.hevs.ch/instructions/DB5.html for all available gestures. Here means the gestures to be used. If not all or ex_x, gestures must come from the same exercise
+  - Thumb up                                                # No need to add Rest. Rest is intrinsically included
+  - Extension of index and middle, flexion of the others
+  - Fingers flexed together in fist
+# gestures_list: all                                        # Set the gestures_list to the str 'all' if you want to use all gestures, ex_a, ex_b, ex_c, ex_ab, ex_bc, ex_ac are also available
+repeats_num_for_ssl: 4                                      # int, 6 in total, so here must be smaller than 6
+val_set_shuffle: True
+drop_last: False
+split_path: split_configs
+split_filename: phase_0_exp_a_no_bp_filter_no_rectify_splits.json                         # ------------------> Change for different settings
+enable_bp_filter: False
+enable_rectify: False
+enable_lp_filter: False
+cutoff_f: 30                                                # Cutoff frequency for lowpass or highpass filter
+timestamp_embedding_path: dataset/timestamp_embeddings                       # The folder for timestamp embeddings
+
+# Feature learner configs
+feature_learner: AutoTimesLlama
+trainer: AutoTimes
+seq_len: 160
+label_len: 152
+token_len: 8
+llm_ckp_dir: ./llama
+mix_embeds: True
+mlp_hidden_layers: 2
+mlp_hidden_dim: 512
+mlp_activation: relu
+dropout: 0.1
+
+# Optimizer configs
+train_epochs: 20
+batch_size: 64
+use_amp: True
+learning_rate: 0.0005
+weight_decay: 0                                             # float
+patience: 5
+cosine: False
+tmax: 10                                                    # tmax in cosine anealing lrtmax in cosine anealing lr
+lradj: type2
+
+# wandb configs
+wandb_project: Llama4EMG_Ninapro_DB5
