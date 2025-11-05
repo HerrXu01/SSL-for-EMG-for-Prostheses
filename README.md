@@ -89,3 +89,6 @@ sh scripts/phase_2/exp_2_gesture_transfer_mlp/p2_e2_02_ssl_mlp_classifier_based_
 # Step 3: Train MLP classifier in fully supervised manner (baseline)
 sh scripts/phase_2/exp_2_gesture_transfer_mlp/p2_e2_03_supervised_mlp_classifier_based_on_p1e16.sh
 ```
+
+## Results
+![Experimental Results](./discussion_key_comparison.png)
