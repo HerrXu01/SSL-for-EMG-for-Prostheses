@@ -2,7 +2,9 @@
 
 ## Introduction
 
-This repository contains the official implementation of the master's thesis *"Self-Supervised Feature Learning in EMG Data for Upper-Limb Prostheses"* at the Technical University of Munich.
+This repository contains the official implementation of the master's thesis *"Self-Supervised Feature Learning in EMG Data for Upper-Limb Prostheses"* by Zhitao Xu at [TUM In-Hand Lab](https://www.ce.cit.tum.de/nhcr/home/).
+
+![SSL Framework](./methodology_ssl_framework.png)
 
 We propose a self-supervised learning framework that leverages pretrained large language models (LLMs), specifically LLaMA-7B, to extract meaningful features from EMG signals without requiring manual labels. By formulating EMG sequences as pseudo-language and training the model via next-token prediction, our method learns robust representations that improve gesture classification performance, even with limited labeled data.
 
